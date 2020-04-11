@@ -1,0 +1,27 @@
+<div class="wrap">
+    <form class="login-form" action="">
+        <div class="form-header">
+            <h3>Login Form</h3>
+            <p>Login to access your dashboard</p>
+        </div>
+        <!--Email Input-->
+        <div class="form-group">
+            <input type="text" name="email" class="form-input" placeholder="email@example.com" [(ngModel)] = "email">
+        </div>
+        <!--Password Input-->
+        <div class="form-group">
+            <input type="password" name="email" class="form-input" placeholder="password" [(ngModel)] = "password">
+        </div>
+
+        <!-- Error -->
+        <span class="error">{{error}}</span>
+
+        <!--Login Button-->
+        <div class="form-group">
+            <button class="form-button" type="button" (click) ="login()">Login</button>
+        </div>
+        <div class="form-footer">
+        Don't have an account? <button type="button" (click) ="goToRegister()">Sign Up</button>
+        </div>
+    </form>
+</div><!--/.wrap-->
