@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseServiceService {
   user: firebase.User;
+
+  userSubject: Subject<firebase.User> = new Subject<firebase.User>();
 
   constructor(private firebaseAuth: AngularFireAuth,
     private router: Router,
@@ -17,6 +20,7 @@ export class FirebaseServiceService {
         // Check if user not null
         if (user) {
           this.user = user;
+          this.userSubject.next(this.user);
           this.router.navigate(['/chat'], { relativeTo: this.route });
         } else {
           user = null;

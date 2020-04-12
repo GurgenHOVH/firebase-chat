@@ -27,3 +27,9 @@ button {
 .from {
     color: grey;
 }
+
+.myMessage {
+    margin-left: auto;
+    background-color: blue !important;
+    color: white;
+}
