@@ -9,6 +9,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ChatComponent } from './chat/chat.component';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -33,6 +34,7 @@ const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
+    AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule
   ],

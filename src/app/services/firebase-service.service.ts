@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class FirebaseServiceService {
+  user: firebase.User;
 
   constructor(private firebaseAuth: AngularFireAuth,
     private router: Router,
@@ -15,11 +16,15 @@ export class FirebaseServiceService {
         console.log(user);
         // Check if user not null
         if (user) {
+          this.user = user;
           this.router.navigate(['/chat'], { relativeTo: this.route });
+        } else {
+          user = null;
         }
       },
       error => {
         console.log(error);
+        this.user = null;
       }
     );
   }

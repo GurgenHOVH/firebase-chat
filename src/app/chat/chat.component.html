@@ -1,3 +1,13 @@
-<p>chat works!</p>
 
 <button type="button" (click)="logout()">Log Out</button>
+
+<div class="chat_messages">
+    <div class="message" *ngFor="let message of chatMessages; let i=index">
+        <p class="from">{{message.from}}</p>
+        <p class="text">{{message.text}}</p>
+    </div>
+</div>
+
+<input class="message-input" type="text" placeholder="Type your message here..." name="message" [(ngModel)]="message">
+
+<button type="button" (click)="send()">Send Message</button>

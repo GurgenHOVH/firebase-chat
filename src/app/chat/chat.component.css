@@ -1,0 +1,29 @@
+.chat_messages {
+    height: 50vh;
+    overflow-y: scroll;
+    background-color: grey;
+}
+
+.message-input {
+    height: 50px;
+    width: 100%;
+    display: block;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    font-size: medium;
+}
+
+.message {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    width: fit-content;
+}
+
+.from {
+    color: grey;
+}
